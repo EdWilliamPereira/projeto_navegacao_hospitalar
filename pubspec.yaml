@@ -1,0 +1,78 @@
+name: hospital_nav
+description: Hospital internal mapping and navigation application.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.0
+  flutter: ">=3.29.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── Localization ─────────────────────────────────────────────────────────────
+  flutter_localizations:       # Localized strings for Flutter Material/Cupertino
+    sdk: flutter
+
+  # ── Map rendering — offline-first, no API key ─────────────────────────────
+  flutter_map: ^8.3.0
+  latlong2: ^0.9.1             # coordinate math, required by flutter_map
+  flutter_map_cache: ^2.1.0   # offline tile caching layer
+
+  # ── Audio / voice ─────────────────────────────────────────────────────────
+  flutter_tts: ^4.2.2          # native Android TTS, supports pt-BR offline
+  speech_to_text: ^7.0.0       # device speech recognition (FR-02, FR-05)
+
+  # ── Haptics ───────────────────────────────────────────────────────────────
+  vibration: ^3.1.8            # configurable vibration patterns (FR-08)
+
+  # ── Local persistence ─────────────────────────────────────────────────────
+  sqflite: ^2.4.2              # SQLite for offline graph + search
+  path: ^1.9.1                 # DB path resolution helper
+
+  # ── User preferences ──────────────────────────────────────────────────────
+  shared_preferences: ^2.5.3   # avoid_stairs, high_contrast, language
+
+  # ── State management & DI ─────────────────────────────────────────────────
+  # IMPORTANT: riverpod_annotation MUST be ^4.x to match riverpod_generator ^4.x
+  flutter_riverpod: ^3.3.1     # verified pub.dev May 2026
+  riverpod_annotation: ^4.0.2  # annotations for code-gen — must be 4.x series
+
+  # ── Routing ───────────────────────────────────────────────────────────────
+  # go_router 15+ makes URLs case-sensitive by default (caseSensitive: false to opt out)
+  go_router: ^17.2.3           # verified pub.dev May 2026
+
+  # ── Models (runtime annotations only — no generated code at runtime) ──────
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
+
+  # ── Functional error handling ─────────────────────────────────────────────
+  fpdart: ^1.1.1               # Either<Failure, T> for domain layer
+
+  # ── Permissions ───────────────────────────────────────────────────────────
+  permission_handler: ^12.0.1  # RECORD_AUDIO for voice search (FR-02)
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+  # ── Code generation ───────────────────────────────────────────────────────
+  build_runner: ^2.4.14
+  freezed: ^3.0.0
+  json_serializable: ^6.9.5
+  # IMPORTANT: riverpod_generator MUST be ^4.x — mismatching with ^3.x
+  # causes build_runner to abort; generated .g.dart files will not be produced
+  riverpod_generator: ^4.0.3   # verified pub.dev May 2026
+
+  # ── Testing ───────────────────────────────────────────────────────────────
+  mocktail: ^1.0.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/map_data.json
+    # floor plan PNG images per floor
+    - assets/floor_plans/floor_0.png
+    - assets/floor_plans/floor_1.png

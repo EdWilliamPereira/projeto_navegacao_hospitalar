@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "name": "Hospital Map Data",
+    "lastUpdated": "2026-03-16"
+  },
+  "nodes": [
+    { "id": "entrance_main", "name": "Main Entrance",     "floor": 0, "x": 500, "y": 100, "type": "entrance" },
+    { "id": "lobby_0",       "name": "Ground Floor Lobby","floor": 0, "x": 500, "y": 300, "type": "junction" },
+    { "id": "elevator_0",    "name": "Elevator Floor 0",  "floor": 0, "x": 700, "y": 300, "type": "elevator" },
+    { "id": "stairs_0",      "name": "Stairs Floor 0",    "floor": 0, "x": 300, "y": 300, "type": "stairs"   },
+    { "id": "room_101",      "name": "Consulting Room 1", "floor": 0, "x": 200, "y": 500, "type": "room"     },
+    { "id": "room_102",      "name": "Pharmacy",          "floor": 0, "x": 800, "y": 500, "type": "room"     },
+    { "id": "elevator_1",    "name": "Elevator Floor 1",  "floor": 1, "x": 700, "y": 300, "type": "elevator" },
+    { "id": "stairs_1",      "name": "Stairs Floor 1",    "floor": 1, "x": 300, "y": 300, "type": "stairs"   },
+    { "id": "lobby_1",       "name": "Floor 1 Lobby",     "floor": 1, "x": 500, "y": 300, "type": "junction" },
+    { "id": "room_201",      "name": "Consulting Room 12","floor": 1, "x": 200, "y": 500, "type": "room"     },
+    { "id": "room_202",      "name": "Laboratory",        "floor": 1, "x": 800, "y": 500, "type": "room"     }
+  ],
+  "edges": [
+    { "origin": "entrance_main", "destination": "lobby_0",    "distance": 20, "accessible": true  },
+    { "origin": "lobby_0",       "destination": "elevator_0", "distance": 15, "accessible": true  },
+    { "origin": "lobby_0",       "destination": "stairs_0",   "distance": 10, "accessible": false },
+    { "origin": "lobby_0",       "destination": "room_101",   "distance": 25, "accessible": true  },
+    { "origin": "lobby_0",       "destination": "room_102",   "distance": 30, "accessible": true  },
+    { "origin": "elevator_0",    "destination": "elevator_1", "distance": 5,  "accessible": true  },
+    { "origin": "stairs_0",      "destination": "stairs_1",   "distance": 5,  "accessible": false },
+    { "origin": "elevator_1",    "destination": "lobby_1",    "distance": 15, "accessible": true  },
+    { "origin": "stairs_1",      "destination": "lobby_1",    "distance": 10, "accessible": false },
+    { "origin": "lobby_1",       "destination": "room_201",   "distance": 25, "accessible": true  },
+    { "origin": "lobby_1",       "destination": "room_202",   "distance": 30, "accessible": true  }
+  ],
+  "pois": [
+    { "id": "poi_001", "name": "Main Entrance",      "category": "entrance",   "nodeId": "entrance_main", "description": "Main hospital entrance on ground floor", "tags": ["entrance", "access"]        },
+    { "id": "poi_002", "name": "Consulting Room 1",  "category": "consulting", "nodeId": "room_101",      "description": "General practice consulting room",      "tags": ["doctor", "consult"]         },
+    { "id": "poi_003", "name": "Pharmacy",           "category": "pharmacy",   "nodeId": "room_102",      "description": "Inpatient and outpatient pharmacy",      "tags": ["medicine", "drugs"]         },
+    { "id": "poi_004", "name": "Consulting Room 12", "category": "consulting", "nodeId": "room_201",      "description": "Specialist consulting - Floor 1",        "tags": ["doctor", "specialist"]      },
+    { "id": "poi_005", "name": "Laboratory",         "category": "laboratory", "nodeId": "room_202",      "description": "Blood and sample analysis laboratory",  "tags": ["lab", "blood", "exam"]      }
+  ]
+}

@@ -237,7 +237,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
               child: FilledButton.icon(
                 onPressed: canGetDirections ? _getDirections : null,
                 icon: const Icon(Icons.directions),
-                label: const Text('Get directions'),
+                label: const Text('Mostrar Rota'),
               ),
             ),
           ),
@@ -291,12 +291,12 @@ class _TwoFieldHeader extends ConsumerWidget {
           Expanded(
             child: _FieldChip(
               icon: Icons.my_location,
-              label: originLabel ?? 'Set origin',
+              label: originLabel ?? 'Definir origem',
               isActive: mode == SearchMode.origin,
               isFilled: originLabel != null,
               semanticLabel: originLabel != null
-                  ? 'Origin: $originLabel. Tap to change.'
-                  : 'Origin not set. Tap to set.',
+                  ? 'Origem: $originLabel. Toque para alterar.'
+                  : 'Origem não definida. Toque para definir.',
               onTap: () => onActivate(SearchMode.origin),
             ),
           ),
@@ -305,12 +305,12 @@ class _TwoFieldHeader extends ConsumerWidget {
           Expanded(
             child: _FieldChip(
               icon: Icons.place,
-              label: destLabel ?? 'Set destination',
+              label: destLabel ?? 'Definir destino',
               isActive: mode == SearchMode.destination,
               isFilled: destLabel != null,
               semanticLabel: destLabel != null
-                  ? 'Destination: $destLabel. Tap to change.'
-                  : 'Destination not set. Tap to set.',
+                  ? 'Destino: $destLabel. Toque para alterar.'
+                  : 'Destino não definido. Toque para definir.',
               onTap: () => onActivate(SearchMode.destination),
             ),
           ),
@@ -417,8 +417,8 @@ class _SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final hint = mode == SearchMode.origin
-        ? 'Search for origin…'
-        : 'Search for destination…';
+        ? 'Buscar origem…'
+        : 'Buscar destino…';
  
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 0, 8, 8),
@@ -481,7 +481,7 @@ class _PoiResultTile extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
     return Semantics(
       // semanticsLabel provides a complete TalkBack description (FR-05).
-      label: '${poi.name}, ${poi.category}. Tap to select.',
+      label: '${poi.name}, ${poi.category}. Toque para selecionar.',
       child: ListTile(
           tileColor: isActive ? cs.primaryContainer.withValues(alpha: 0.4) : null,
           leading: Icon(

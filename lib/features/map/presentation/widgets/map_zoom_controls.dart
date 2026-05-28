@@ -17,12 +17,12 @@ class MapZoomControls extends StatelessWidget {
 
   void _zoomIn() {
     final current = controller.camera.zoom;
-    controller.move(controller.camera.center, current + 1);
+    controller.move(controller.camera.center, current + 0.5);
   }
 
   void _zoomOut() {
     final current = controller.camera.zoom;
-    controller.move(controller.camera.center, current - 1);
+    controller.move(controller.camera.center, current - 0.5);
   }
 
   void _fitBounds() {

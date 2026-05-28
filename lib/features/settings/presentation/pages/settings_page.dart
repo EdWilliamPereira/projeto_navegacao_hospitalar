@@ -24,8 +24,8 @@ class SettingsPage extends ConsumerWidget {
         children: [
           // FR-07, FR-09 — accessible route preference
           SwitchListTile(
-            title: const Text('Avoid stairs'),
-            subtitle: const Text('Routes will use elevators and ramps only'),
+            title: const Text('Ignorar escadas'),
+            subtitle: const Text('Rotas utilizarão apenas elevadores e rampas.'),
             secondary: const Icon(Icons.accessible),
             value: avoidStairsAsync.value ?? false,
             // Disable toggle while preference is loading to prevent double-writes.
@@ -36,8 +36,8 @@ class SettingsPage extends ConsumerWidget {
           
           // FR-10 — high-contrast theme
           SwitchListTile(
-            title: const Text('High contrast mode'),
-            subtitle: const Text('Use high-contrast theme for accessibility'),
+            title: const Text('Modo de alto contraste'),
+            subtitle: const Text('Tema de alto contraste para acessibilidade.'),
             secondary: const Icon(Icons.contrast),
             value: highContrastAsync.value ?? false,
             onChanged: highContrastAsync.isLoading
@@ -47,7 +47,7 @@ class SettingsPage extends ConsumerWidget {
 
           const Divider(),
           const ListTile(
-            title: Text('App version'),
+            title: Text('Versão do aplicativo'),
             trailing: Text('1.0.0'),
           ),
         ],

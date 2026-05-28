@@ -35,7 +35,7 @@ class MapLocalDataSourceImpl implements MapLocalDataSource {
 
     _db = await openDatabase(
       path,
-      version: 4,
+      version: 5,
       // onCreate fires only on the very first launch (empty database).
       onCreate: _createSchemaAndSeed,
       onUpgrade: (db, oldVersion, newVersion) async {

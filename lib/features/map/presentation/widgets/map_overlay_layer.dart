@@ -62,33 +62,33 @@ class MapOverlayLayer extends StatelessWidget {
   IconData _iconForType(NodeType type, bool isUser) {
     if (isUser) return Icons.my_location;
     return switch (type) {
-      NodeType.elevator => Icons.elevator,
-      NodeType.stairs => Icons.stairs,
-      NodeType.entrance => Icons.door_front_door,
-      NodeType.room => Icons.room,
-      NodeType.junction => Icons.circle_outlined,
+      NodeType.elevador => Icons.elevator,
+      NodeType.escada => Icons.stairs,
+      NodeType.entrada => Icons.door_front_door,
+      NodeType.quarto => Icons.room,
+      NodeType.juncao => Icons.circle_outlined,
     };
   }
 
 /*
   Color _colorForType(NodeType type, BuildContext context) {
     return switch (type) {
-      NodeType.room => Colors.blue,
-      NodeType.elevator => Colors.orange,
-      NodeType.stairs => Colors.red,
-      NodeType.junction => Colors.grey,
-      NodeType.entrance => Colors.green,
+      NodeType.quarto => Colors.blue,
+      NodeType.elevador => Colors.orange,
+      NodeType.escada => Colors.red,
+      NodeType.juncao => Colors.grey,
+      NodeType.entrada => Colors.green,
     };
   }
 */
 
   Color _colorForType(NodeType type, BuildContext context) {
     return switch (type) {
-      NodeType.elevator => Colors.green.shade700,
-      NodeType.stairs => Colors.orange.shade700,
-      NodeType.entrance => Colors.purple.shade700,
-      NodeType.room => Theme.of(context).colorScheme.primary,
-      NodeType.junction => Colors.grey,
+      NodeType.elevador => Colors.green.shade700,
+      NodeType.escada => Colors.orange.shade700,
+      NodeType.entrada => Colors.purple.shade700,
+      NodeType.quarto => Theme.of(context).colorScheme.primary,
+      NodeType.juncao => Colors.grey,
     };
   }
 }

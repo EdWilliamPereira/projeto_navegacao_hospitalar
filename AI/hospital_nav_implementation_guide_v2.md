@@ -2470,7 +2470,7 @@ class SettingsPage extends ConsumerWidget {
           ),
           const Divider(),
           const ListTile(
-            title: Text('App version'),
+            title: Text('Versão'),
             trailing: Text('1.0.0'),
           ),
         ],

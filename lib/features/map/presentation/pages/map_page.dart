@@ -37,7 +37,7 @@ class MapPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hospital Map'),
+        title: const Text('Mapa do Hospital'),
         actions: [
           IconButton(
             tooltip: 'Search destination',
@@ -61,8 +61,8 @@ class MapPage extends ConsumerWidget {
               options: const MapOptions(
                 initialCenter: LatLng(0.5, 0.5),
                 initialZoom: 13,
-                minZoom: 10,
-                maxZoom: 18,
+                minZoom: 9,
+                maxZoom: 15,
                 interactionOptions: InteractionOptions(
                   flags: InteractiveFlag.pinchZoom |
                       InteractiveFlag.drag |

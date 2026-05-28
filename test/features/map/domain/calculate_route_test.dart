@@ -17,9 +17,9 @@ void main() {
   // A simple three-node graph: a ─── b ─── c
   //                                   └─────── c (stair shortcut)
   const nodes = [
-    Node(id: 'a', name: 'A', floor: 0, x: 0, y: 0, type: NodeType.junction),
-    Node(id: 'b', name: 'B', floor: 0, x: 1, y: 0, type: NodeType.elevator),
-    Node(id: 'c', name: 'C', floor: 0, x: 2, y: 0, type: NodeType.room),
+    Node(id: 'a', name: 'A', floor: 0, x: 0, y: 0, type: NodeType.juncao),
+    Node(id: 'b', name: 'B', floor: 0, x: 1, y: 0, type: NodeType.elevador),
+    Node(id: 'c', name: 'C', floor: 0, x: 2, y: 0, type: NodeType.quarto),
   ];
 
   const edges = [

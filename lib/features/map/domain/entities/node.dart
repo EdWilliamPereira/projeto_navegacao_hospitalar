@@ -1,4 +1,4 @@
-enum NodeType { room, elevator, stairs, junction, entrance }
+enum NodeType { quarto, elevador, escada, juncao, entrada }
 
 /// A vertex in the hospital graph.
 /// Pure Dart — no framework or serialization dependencies.
@@ -20,5 +20,5 @@ class Node {
   });
 
   /// Convenience getter used by the accessibility filter in CalculateRoute.
-  bool get isAccessible => type != NodeType.stairs;
+  bool get isAccessible => type != NodeType.escada;
 }
